@@ -62,7 +62,6 @@ print(f"Class attribute: Car.wheels = {Car.wheels}")
 print()
 
 # ===== ENCAPSULATION =====
-print("--- ENCAPSULATION ---\n")
 
 # 5. Public, protected, and private attributes
 class BankAccount:
@@ -87,6 +86,7 @@ print(f"Name mangled access: {account._BankAccount__pin}")
 print()
 
 # 6. Property decorator (getters and setters)
+# @property lets you use a method like an attribute.
 class Temperature:
     def __init__(self, celsius):
         self._celsius = celsius
@@ -229,9 +229,9 @@ print(make_it_fly(Superhero()))
 print()
 
 # ===== SPECIAL/MAGIC METHODS =====
-print("--- SPECIAL/MAGIC METHODS ---\n")
-
 # 13. __str__ and __repr__
+# __str__ is meant to be human readable
+# __repr__ is meant to help the developer understand the class
 class Book:
     def __init__(self, title, author):
         self.title = title
@@ -314,6 +314,12 @@ print()
 # ===== CLASS METHODS AND STATIC METHODS =====
 print("--- CLASS METHODS AND STATIC METHODS ---\n")
 
+# Feature	                    staticmethod	classmethod
+# Can call without object?	    ✅ Yes	      ✅ Yes
+# First parameter	                none	         cls
+# Knows class?	                ❌ No	        ✅ Yes
+# Used for	                utility functions	factories, modifying class state
+
 # 17. Class methods
 class Pizza:
     def __init__(self, ingredients):
@@ -350,7 +356,6 @@ print(f"MathUtils.multiply(4, 7) = {MathUtils.multiply(4, 7)}")
 print()
 
 # ===== ABSTRACT CLASSES =====
-print("--- ABSTRACT CLASSES ---\n")
 
 # 19. Abstract base class
 from abc import ABC, abstractmethod
@@ -382,7 +387,6 @@ print(car.honk())
 print()
 
 # ===== COMPOSITION =====
-print("--- COMPOSITION ---\n")
 
 # 20. Composition (has-a relationship)
 class Engine:
@@ -409,7 +413,6 @@ print(car.engine.start())
 print()
 
 # ===== DATA CLASSES (Python 3.7+) =====
-print("--- DATA CLASSES ---\n")
 
 # 21. Dataclass
 from dataclasses import dataclass
@@ -429,7 +432,6 @@ print(f"Distance: {point.distance_from_origin()}")
 print()
 
 # ===== ADVANCED CONCEPTS =====
-print("--- ADVANCED CONCEPTS ---\n")
 
 # 22. __call__ (making objects callable)
 class Multiplier:
